@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+service FileService {
+  rpc ListFiles(Empty) returns (FileList) {}
+  rpc ReadFile(FileRequest) returns (FileResponse) {}
+}
+
+message FileList {
+  repeated string filenames = 1;
+}
+
+message FileResponse {
+  bytes file_contents = 1;
+}
+
+message Empty {}
+
+message FileRequest {
+  string filename = 1;
+}
