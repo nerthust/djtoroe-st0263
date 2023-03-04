@@ -15,14 +15,14 @@ class FileServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListFiles = channel.unary_unary(
-                '/FileService/ListFiles',
-                request_serializer=file__service__pb2.Empty.SerializeToString,
-                response_deserializer=file__service__pb2.FileList.FromString,
+                '/file_service.FileService/ListFiles',
+                request_serializer=file__service__pb2.ListFilesReq.SerializeToString,
+                response_deserializer=file__service__pb2.ListFilesResp.FromString,
                 )
-        self.ReadFile = channel.unary_unary(
-                '/FileService/ReadFile',
-                request_serializer=file__service__pb2.FileRequest.SerializeToString,
-                response_deserializer=file__service__pb2.FileResponse.FromString,
+        self.SearchFiles = channel.unary_unary(
+                '/file_service.FileService/SearchFiles',
+                request_serializer=file__service__pb2.SearchFilesReq.SerializeToString,
+                response_deserializer=file__service__pb2.ListFilesResp.FromString,
                 )
 
 
@@ -35,7 +35,7 @@ class FileServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ReadFile(self, request, context):
+    def SearchFiles(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -46,17 +46,17 @@ def add_FileServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListFiles': grpc.unary_unary_rpc_method_handler(
                     servicer.ListFiles,
-                    request_deserializer=file__service__pb2.Empty.FromString,
-                    response_serializer=file__service__pb2.FileList.SerializeToString,
+                    request_deserializer=file__service__pb2.ListFilesReq.FromString,
+                    response_serializer=file__service__pb2.ListFilesResp.SerializeToString,
             ),
-            'ReadFile': grpc.unary_unary_rpc_method_handler(
-                    servicer.ReadFile,
-                    request_deserializer=file__service__pb2.FileRequest.FromString,
-                    response_serializer=file__service__pb2.FileResponse.SerializeToString,
+            'SearchFiles': grpc.unary_unary_rpc_method_handler(
+                    servicer.SearchFiles,
+                    request_deserializer=file__service__pb2.SearchFilesReq.FromString,
+                    response_serializer=file__service__pb2.ListFilesResp.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'FileService', rpc_method_handlers)
+            'file_service.FileService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -75,14 +75,14 @@ class FileService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/FileService/ListFiles',
-            file__service__pb2.Empty.SerializeToString,
-            file__service__pb2.FileList.FromString,
+        return grpc.experimental.unary_unary(request, target, '/file_service.FileService/ListFiles',
+            file__service__pb2.ListFilesReq.SerializeToString,
+            file__service__pb2.ListFilesResp.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ReadFile(request,
+    def SearchFiles(request,
             target,
             options=(),
             channel_credentials=None,
@@ -92,8 +92,8 @@ class FileService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/FileService/ReadFile',
-            file__service__pb2.FileRequest.SerializeToString,
-            file__service__pb2.FileResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/file_service.FileService/SearchFiles',
+            file__service__pb2.SearchFilesReq.SerializeToString,
+            file__service__pb2.ListFilesResp.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

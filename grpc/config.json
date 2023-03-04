@@ -1,0 +1,5 @@
+{
+  "port": 50051,
+  "max_workers": 10,
+  "dir_path": "/home/nerthust/university/7/telematic_2/challenges/challenge_2"
+}
