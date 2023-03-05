@@ -45,7 +45,6 @@ def balance(req):
     global is_mom
     mutex.acquire()
 
-    is_mom = False
     if is_mom == True:
         is_mom = False
         mutex.release()
