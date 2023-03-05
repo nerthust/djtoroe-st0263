@@ -1,5 +1,4 @@
 {
-  "port": 50051,
-  "max_workers": 10,
+  "host": "localhost",
   "dir_path": "/home/nerthust/university/7/telematic_2/challenges/challenge_2/service-grpc/files"
 }

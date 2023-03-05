@@ -28,7 +28,13 @@ def grcp(req):
     service = req['service']
     limit = int(req['limit'])
 
-    channel = grpc.insecure_channel('localhost:50051')
+    config = json.load(open("config.json", 'r'))
+
+    host = config['host']
+    port = config['port']
+
+    rute = f"{host}:{port}"
+    channel = grpc.insecure_channel(rute)
     stub = file_service_pb2_grpc.FileServiceStub(channel)
 
     response = None

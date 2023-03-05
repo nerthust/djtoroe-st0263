@@ -1,11 +1,12 @@
-#!/usr/bin/env python
 import pika
 import uuid
+import json
 
 class rpcClient(object):
     def __init__(self):
+        config = json.load(open('config.json', 'r'))
         self.connection = pika.BlockingConnection(
-            pika.ConnectionParameters(host='localhost'))
+            pika.ConnectionParameters(host=config['host']))
 
         self.channel = self.connection.channel()
 
