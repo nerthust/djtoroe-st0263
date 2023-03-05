@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package file_service;
+
+service FileService {
+  rpc ListFiles(ListFilesReq) returns (ListFilesResp);
+  rpc SearchFiles(SearchFilesReq) returns (ListFilesResp);
+}
+
+message ListFilesReq {
+  optional int32 limit = 2;
+}
+
+message ListFilesResp {
+  repeated string file_names = 1;
+}
+
+message SearchFilesReq {
+  string search_query = 1;
+  optional int32 limit = 2;
+}
