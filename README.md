@@ -78,7 +78,7 @@ Instalar las depedencias necesarias para el trabajo.
 ![alt text](https://github.com/nerthust/djtoroe-st0263/blob/main/assets/libraries.png)
 
 En otra seccion, inicializa cada uno de los servicios.
-![alt text](https://github.com/nerthust/djtoroe-st0263/blob/main/assets/screen.png)
+![alt text](https://github.com/nerthust/djtoroe-st0263/blob/main/assets/services.png)
 
 
 Para ejecutar el trabajo se usa el siguiente comando:
