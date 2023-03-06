@@ -75,7 +75,7 @@ pika==1.3.1
 En el repositorio se encuentra el archivo `build.sh` el cual se encarga de:
 Instalar las depedencias necesarias para el trabajo.
 
-![alt text](https://github.com/nerthust/djtoroe-st0263/blob/main/assets/screen.png](https://github.com/nerthust/djtoroe-st0263/blob/main/assets/libraries.png)
+![alt text](https://github.com/nerthust/djtoroe-st0263/blob/main/assets/libraries.png)
 
 En otra seccion, inicializa cada uno de los servicios.
 
