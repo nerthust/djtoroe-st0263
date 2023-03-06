@@ -87,6 +87,29 @@ Para ejecutar el trabajo se usa el siguiente comando:
 ./build.sh
 ```
 
+# 5 Consulta a la API Gateway
+
+Una vez activado los micro-servicios y API Gateway es posible hacer las peticiones Http.
+Las peticiones se pueden hacer desde el navegador o con `curl`. Se explicara como funciona la segunda opcion.
+
+El formato de las Urls es el siguiente:
+ - `list/limit` listar todos los archivos aceptando un limite para reducir la busqueda.
+ 
+ ```
+curl http://100.24.208.232/list/0 
+
+"file_names: \"/home/ubuntu/djtoroe-st0263/service-grpc/files/file2.txt\"\nfile_names: \"/home/ubuntu/djtoroe-st0263/service-grpc/files/newfiles      \"\nfile_names: \"/home/ubuntu/djtoroe-st0263/service-grpc/files/file3.txt\"\nfile_names: \"/home/ubuntu/djtoroe-st0263/service-grpc/files/file1.txt\"\nfile_names: \"/home/ubuntu/djtoroe-st0263/service-grpc/files/newfiles/nf5.txt\"\nfile_names: \"/home/ubuntu/djtoroe-st0263/service-grpc/files/newfiles/nf4.txt\"\n"% 
+ ```
+ 
+ `list/0` significa listar todos los archivos.
+ 
+ - `search/patron/limit` buscar las ocurrencias de un patron dado, tambien acepta un limite para reducir la busqueda.
+ 
+ ```
+ curl http://100.24.208.232/search/file1.txt/0
+"file_names: \"/home/ubuntu/djtoroe-st0263/service-grpc/files/file1.txt\"\n"% 
+ ```
+
 
 # 5. referencias:
 - https://www.rabbitmq.com/tutorials/tutorial-six-python.html
