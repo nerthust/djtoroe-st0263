@@ -22,6 +22,7 @@ El sistema ofrece dos micro-servicios a una API Gateway sirviendo como proxy en 
 Todos los requerimientos en el laboratorio fueron desarrollados.
 
 # 2. Arquitectura.
+![alt text](https://github.com/nerthust/djtoroe-st0263/blob/main/assets/grpc_mom.png)
 
 El sistema va intercambiando entre Modo GRPC y Modo MOM. 
 
