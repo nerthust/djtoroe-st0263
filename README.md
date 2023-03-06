@@ -70,17 +70,17 @@ pika==1.3.1
  }
 ```
 
-# 4. Descripción del ambiente de EJECUCIÓN (en producción) lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
+# 4. Ejecucion
+En el repositorio se encuentra el archivo `build.sh` el cual se encarga de:
+Instalar las depedencias necesarias para el trabajo.
 
-# IP o nombres de dominio en nube o en la máquina servidor.
+En otra seccion, inicializa cada uno de los servicios.
 
-## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
+Para ejecutar el trabajo se usa el siguiente comando:
 
-## como se lanza el servidor.
-
-## una mini guia de como un usuario utilizaría el software o la aplicación
-
-## opcionalmente - si quiere mostrar resultados o pantallazos 
+```
+./build.sh
+```
 
 
 # 5. referencias:
