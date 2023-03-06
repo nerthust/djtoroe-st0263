@@ -31,6 +31,7 @@ Cuando se encuentra en modo MOM la petición se envía a una cola de peticiones 
 
 # 3. Ambiente de desarrollo
 # 3.1 Dir Tree
+![alt text](https://github.com/nerthust/djtoroe-st0263/blob/main/assets/screen.png)
 # 3.2 Lenguaje de programacion
 EL lenguaje usado fue Python 3.10.
 
@@ -74,7 +75,12 @@ pika==1.3.1
 En el repositorio se encuentra el archivo `build.sh` el cual se encarga de:
 Instalar las depedencias necesarias para el trabajo.
 
+![alt text](https://github.com/nerthust/djtoroe-st0263/blob/main/assets/screen.png](https://github.com/nerthust/djtoroe-st0263/blob/main/assets/libraries.png)
+
 En otra seccion, inicializa cada uno de los servicios.
+
+![alt text](https://github.com/nerthust/djtoroe-st0263/blob/main/assets/screen.png](https://github.com/nerthust/djtoroe-st0263/blob/main/assets/libraries.png](https://github.com/nerthust/djtoroe-st0263/blob/main/assets/services.png)
+
 
 Para ejecutar el trabajo se usa el siguiente comando:
 
